@@ -2,7 +2,7 @@
 
 
 from pathlib import Path
-
+from menuloop import display_menu
 
 
 
@@ -13,7 +13,7 @@ ENV = '.\env\Scripts\activate'
 
 
 # Set up dict or class
-class Launch:
+class CMD:
 
     def __init__(self, cmd, env=False) -> None:
 
@@ -24,6 +24,7 @@ class Launch:
     def send_commands(self) -> None:
         # write this to call the windows commands
         # cli > start env (if True) && launch .py
+        print(self.command)
         pass
 
 
@@ -32,15 +33,13 @@ class Launch:
 # Generate objects and list
 def go():
 
-    menufunc(
+    # Display menu
+    display_menu(
         ('Create Papercut Packages', CMD(
             'this is the command to start',
             'this is the env command'
         ))
-    ).call_commands_method()
-
-# Display menu
-# Send terminal command
+    ).send_commands() # Send terminal command
 
 
 
@@ -76,7 +75,8 @@ def go():
 
 
 
-
+if __name__ == "__main__":
+    go()
 
 
 
