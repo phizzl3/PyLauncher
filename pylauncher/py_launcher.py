@@ -37,8 +37,8 @@ class CMD:
         # write this to call the windows commands
         # cli > start env (if True) && launch .py
 
-        # if self.envfolder == exit:
-        #     exit('Exiting...')
+        if self.repofolder.endswith() == 'EXIT':
+            exit('Exiting...')
 
         # Windows
         if OS == 'Windows':
@@ -76,8 +76,8 @@ def main():
                 'simple-console-menu',
                 'menuloop.py',
                 envfolder=None
-            ))
-            # ('Exit', CMD(None, None, exit))
+            )),
+            ('Exit', CMD('EXIT', ''))
         ).send_commands()  # Send terminal command
 
 
