@@ -47,11 +47,8 @@ class CMD:
 
         # Mac
         elif OS == 'Darwin':
-            if self.env:
-                subprocess.run(
-                    f'source {self.repopath}/env/bin/activate && python3 {self.runpath}', shell=True)
-            else:
-                subprocess.run(f'python3 {self.runpath}', shell=True)
+            subprocess.run(
+                f'{self.envfolder/"bin"/"python3" if hasattr(self, "envfolder") else "python3"} {self.runpath}', shell=True)
 
         else:
             exit('Platform not supported.')
