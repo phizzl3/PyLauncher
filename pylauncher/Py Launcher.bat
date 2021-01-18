@@ -1,2 +1,2 @@
 @ECHO OFF
-py C:\code\py-launcher\pylauncher\Launcher.py
+py C:\code\py-launcher\pylauncher\py_launcher.py
