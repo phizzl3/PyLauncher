@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-
+"""
+notes for windows - 
+needs to point to path to env python.exe - no need to activate
+needs
+    code path 
+    repo path
+    (optional) env folder name
+    script path
+"""
 
 from pathlib import Path
 from menuloop import display_menu
