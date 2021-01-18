@@ -62,6 +62,11 @@ def main():
                 '/papercut-sw-packager/pcswpkgr/papercut_sw_packager.py',
                 env=True
             )),
+            ('Compile MOR', CMD(
+                '/compile-MOR',
+                '/compile-MOR/compmor/compile_mor.py',
+                env=True
+            )),
             ('Exit', CMD(None, None, exit))
         ).send_commands()  # Send terminal command
 
