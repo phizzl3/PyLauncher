@@ -29,7 +29,7 @@ class CMD:
     def __init__(self, repofolder, runptpath, envfolder=None) -> None:
 
         self.repofolder = CODE / repofolder
-        self.runpath = CODE / repofolder / runptpath
+        self.runpath = self.repofolder / runptpath
         if envfolder:
             self.envfolder = self.repofolder / envfolder
 
