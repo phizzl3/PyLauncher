@@ -26,27 +26,24 @@ OS = platform.system()
 
 class CMD:
 
-    def __init__(self, repopath, runptpath, env=False) -> None:
+    def __init__(self, repofolder, runptpath, envfolder=None) -> None:
 
-        self.repopath = f'{CODE}{repopath}'
-        self.runpath = f'{CODE}{runptpath}'
-        self.env = env
+        self.repofolder = CODE / repofolder
+        self.runpath = CODE / repofolder / runptpath
+        if envfolder:
+            self.envfolder = self.repofolder / envfolder
 
     def send_commands(self) -> None:
         # write this to call the windows commands
         # cli > start env (if True) && launch .py
 
-        if self.env == exit:
-            exit('Exiting...')
-
+        # if self.envfolder == exit:
+        #     exit('Exiting...')
 
         # Windows
         if OS == 'Windows':
-            if self.env:
-                os.system(
-                    f'{self.repopath}/env/Scripts/activate && py {self.runpath}')
-            else:
-                os.system(f'py {self.runpath}')
+            os.system(
+                f'{self.envfolder/"Scripts"/"python.exe" if hasattr(self, "envfolder") else "py"} {self.runpath}')
 
         # Mac
         elif OS == 'Darwin':
@@ -66,17 +63,23 @@ def main():
         # Display menu
         display_menu(
             ('Create Papercut Packages', CMD(
-                '/papercut-sw-packager',
-                '/papercut-sw-packager/pcswpkgr/papercut_sw_packager.py',
-                env=True
+                'papercut-sw-packager',
+                'pcswpkgr/papercut_sw_packager.py',
+                envfolder='env'
             )),
             ('Compile MOR', CMD(
-                '/compile-MOR',
-                '/compile-MOR/compmor/compile_mor.py',
-                env=True
+                'compile-MOR',
+                'compmor/compile_mor.py',
+                envfolder='env'
             )),
-            ('Exit', CMD(None, None, exit))
+            ('Console Menu', CMD(
+                'simple-console-menu',
+                'menuloop.py',
+                envfolder=None
+            ))
+            # ('Exit', CMD(None, None, exit))
         ).send_commands()  # Send terminal command
+
 
 if __name__ == "__main__":
     main()
