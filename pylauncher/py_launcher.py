@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 """
-notes for windows - 
-needs to point to path to env python.exe - no need to activate
-needs
-    code path 
-    repo path
-    (optional) env folder name
-    script path
+
 """
 
 from pathlib import Path
@@ -15,13 +9,9 @@ import subprocess
 import os
 import platform
 
-# Get code path
+# Get Path to folder containing the repos and check operating system
 CODE = Path(__file__).resolve().parent.parent.parent
-
-
 OS = platform.system()
-
-# Set up dict or class
 
 
 class CMD:
@@ -34,19 +24,17 @@ class CMD:
             self.envfolder = self.repofolder / envfolder
 
     def send_commands(self) -> None:
-        # write this to call the windows commands
-        # cli > start env (if True) && launch .py
 
+        # Set up an exit option to break out of the loop
         if str(self.repofolder).endswith('EXIT'):
             exit('Exiting...')
 
-        # Windows
+        # Run correctly formatted command based on detected OS and virtual environment
         if OS == 'Windows':
             os.system(
                 f'{self.envfolder/"Scripts"/"python.exe" if hasattr(self, "envfolder") else "py"} {self.runpath}')
 
-        # Mac
-        elif OS == 'Darwin':
+        elif OS == 'Darwin' or 'Linux':
             subprocess.run(
                 f'{self.envfolder/"bin"/"python3" if hasattr(self, "envfolder") else "python3"} {self.runpath}', shell=True)
 
@@ -57,25 +45,15 @@ class CMD:
 def main():
 
     while True:
-        # Display menu
+        # Generate objects and send to display menu (*EXAMPLES*)
         display_menu(
-            ('Create Papercut Packages', CMD(
-                'papercut-sw-packager',
-                'pcswpkgr/papercut_sw_packager.py',
-                envfolder='env'
-            )),
-            ('Compile MOR', CMD(
-                'compile-MOR',
-                'compmor/compile_mor.py',
-                envfolder='env'
-            )),
-            ('Console Menu', CMD(
-                'simple-console-menu',
-                'menuloop.py',
-                # envfolder=None
-            )),
+            ('_Menu option 1', CMD('_repo folder 1', '_src/main.py', envfolder='_env')),
+            ('_Menu option 2', CMD('_repo folder 2', '_src2/main.py', envfolder='_venv')),
+            ('_Menu option 3', CMD('_repo folder 3', '_src3/main.py', envfolder=None)),
+            # Leave this one last for an exit option
             ('Exit', CMD('EXIT', ''))
-        ).send_commands()  # Send terminal command
+            # Call send_commands method on object returned from menu selection
+        ).send_commands()
 
 
 if __name__ == "__main__":
