@@ -1,4 +1,4 @@
-# py-launcher
+# PyLauncher
 
 Pull together individual scripts/repos from a folder and launch them using the command line.
 
