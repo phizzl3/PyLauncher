@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-This script allows you to call other scripts located in repositories 
-housed in the same folder as this script's cloned repository with a 
-numbered menu using your operating system's terminal/shell commands 
-rather than having to modify/import/combine them to do so. Works with 
-or without a virtualenv in each given repo. View README.md for more info.
+This script allows you to call other scripts located in repositories housed in the 
+same parent folder as this script's cloned repository with a numbered menu by 
+generating and sending your operating system's terminal/shell commands to launch 
+them rather than you having to modify/import/combine them to do so.
+* View README.md for more info.
 """
 
 import os
