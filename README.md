@@ -41,7 +41,7 @@ Replace the Example info in the PyLauncher.py script's main function with your r
 # Replace each set within the display_menu call below with your repo/script/folder info
 display_menu(
 
-    ('Displays in menu', CMD('Repo folder name', 'yourscript.py', envfolder='environment folder'),
+    ('Displays in menu', CMD('Repo folder name', 'myscript.py', envfolder='environment folder'),
 
     ).send_commands()
 ```
