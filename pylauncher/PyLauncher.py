@@ -81,10 +81,18 @@ def main():
     try:
         while True:
             display_title()
-            # Generate objects and send to display menu (*EXAMPLES*)
-            display_menu(('_Menu option 1', CMD('_repo folder 1', '_src/main.py', envfolder='_env')),
+
+            """
+            * Generate objects and send to display menu (*EXAMPLES*)
+            * NOTE: Replace each set within the display_menu call below with your repo/script/folder info
+            """
+
+            display_menu(
+                
+                ('_Menu option 1', CMD('_repo folder 1', '_src/main.py', envfolder='_env')),
                 ('_Menu option 2', CMD('_repo folder 2', '_src2/main.py', envfolder='_venv')),
                 ('_Menu option 3', CMD('_repo folder 3', '_src3/main.py', envfolder=None)),
+                
                 # Leave this one last for an exit option
                 ('Exit', CMD('EXIT', ''))
             ).send_commands()  # Call send_commands method on object returned from menu selection
