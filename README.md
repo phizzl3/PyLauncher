@@ -35,4 +35,13 @@ The idea is to have a central folder that you clone all of the repositories you 
             -main.py
 ```
 
-Replace the Example info in the PyLauncher.py script with your repo's info and run it.  
+Replace the Example info in the PyLauncher.py script's main function with your repo's info and run it.  
+
+```py
+# Replace each set within the display_menu call below with your repo/script/folder info
+display_menu(
+
+    ('Displays in menu', CMD('Repo folder name', 'yourscript.py', envfolder='environment folder'),
+
+    ).send_commands()
+```
