@@ -76,7 +76,7 @@ class CMD:
 def main():
     """
     Generates objects, displays the selection menu and calls the 
-    send_commands method on returned object based on user selction.
+    send_commands method on returned object based on user selection.
     """
     try:
         while True:
