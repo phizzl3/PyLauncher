@@ -1,4 +1,4 @@
-# 01.17.2021
+# 01.17.2021 - MODIFIED
 """
 Displays a numbered menu to console and returns a corresponding function 
 or object based on user number selection using a passed *expanded list/tuple.
@@ -6,6 +6,13 @@ or object based on user number selection using a passed *expanded list/tuple.
 Import it and pass it an *expanded list of tuples/lists. It will return list[1]
 for your selection.
 """
+
+import colorama
+
+# Set up colorama output
+colorama.init(autoreset=True)
+GREEN = colorama.Fore.LIGHTGREEN_EX
+
 
 def display_menu(*args):
     """
@@ -22,10 +29,9 @@ def display_menu(*args):
     Usage Example:
         display_menu(*options)()  # Displays menu and calls the returned function
     """
-
     # Number (enumerate) and display the options [0] from args pair starting at 1
     for i, arg in enumerate(args, 1):
-        print(f' [{i}]: {arg[0]}')
+        print(f'{GREEN} [{i}]: {arg[0]}')
 
     # Ask for user input and return the corresponding item/function [1] only if
     # the selection can be found in list.
@@ -38,7 +44,7 @@ def display_menu(*args):
 
 
 if __name__ == "__main__":
-    # Just a quick test/example to see how it works. 
+    # Just a quick test/example to see how it works.
 
     opts = (
         ('print', print),
