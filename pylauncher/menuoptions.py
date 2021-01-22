@@ -18,6 +18,7 @@ OPS = (
     ('VBS Calculator', 'PrintShopScripts', 'scripts/vbs_calculator.py', None),
     ('Mail Logs Calculator', 'PrintShopScripts', 'scripts/mail_logs_calculator.py', None),
     ('Generate Department Charges', 'DeptCharges', 'deptcharges', 'env'),
+    ('Check Charges for Missing Tickets', 'CheckMissingTickets', 'checktickets', 'env'),
     ('Generate MS Invoice Details', 'MSInvoiceDetails', 'msinvoice', 'env'),
     ('Get Papercut Reports', 'get-papercut-reports', 'getreports/get_papercut_reports.py', 'env'),
     ('Generate PaperCut Packages', 'papercut-sw-packager', 'pcswpkgr/papercut_sw_packager.py', 'env'),
