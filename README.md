@@ -2,6 +2,8 @@
 
 Pull together individual scripts/repos from a folder and launch them using shell commands via a menu.
 
+![Sample Window](/images/pylauncher.jpg)
+
 ## What it does
 
 This script allows you to call other scripts located in repositories housed in the same parent folder as this script's cloned repository with a numbered menu by generating and sending your operating system's terminal/shell commands to launch them rather than you having to modify/import/combine each script to do so.  
