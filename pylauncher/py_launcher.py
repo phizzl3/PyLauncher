@@ -13,6 +13,7 @@ import subprocess
 from pathlib import Path
 
 from menuloop import display_menu
+from menuoptions import OPS
 from title import display_title
 
 # Get Path to folder containing the repos and check operating system
@@ -38,7 +39,7 @@ class CMD:
             # Sets attributes containing Path objects pointing to specified folders and file
             self.repofolder = CODE / repofolder
             self.runpath = self.repofolder / runptpath
-            
+
             if envfolder:
                 self.envfolder = self.repofolder / envfolder
 
@@ -52,6 +53,7 @@ class CMD:
         specified virtualenv if present. (Windows, Mac, Linux)
         """
         try:
+            display_title()  # NOTE: Comment out if you don't want title shown once selected script runs
             # Set up an exit option to break out of the loop
             if str(self.repofolder).endswith('EXIT'):
                 exit(' Exiting...')
@@ -81,21 +83,11 @@ def main():
     try:
         while True:
             display_title()
-
-            """
-            * Generate objects and send to display menu (*EXAMPLES*)
-            * NOTE: Replace each set within the display_menu call below with your repo/script/folder info
-            """
-
-            display_menu(
-                
-                ('_Menu option 1', CMD('_repo folder 1', '_src/main.py', envfolder='_env')),
-                ('_Menu option 2', CMD('_repo folder 2', '_src2/main.py', envfolder='_venv')),
-                ('_Menu option 3', CMD('_repo folder 3', '_src3/main.py', envfolder=None)),
-                
-                # Leave this one last for an exit option
-                ('Exit', CMD('EXIT', ''))
-            ).send_commands()  # Call send_commands method on object returned from menu selection
+            # NOTE: Add your menu options to OPS in menuoptions.py
+            # Generate objects and menu items
+            options = [(d, CMD(rf, rp, envfolder=ef)) for d, rf, rp, ef in OPS]
+            # Display menu and call send_commands method on returned object
+            display_menu(*options).send_commands()
 
     except Exception as e:
         input(f'\n Error running main: {e}')
