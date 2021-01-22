@@ -48,3 +48,9 @@ OPS = (
 
 )
 ```
+
+Run  
+
+```bash
+$ py pylauncher
+```
