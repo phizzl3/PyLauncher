@@ -20,6 +20,7 @@ OPS = (
     ('Generate Department Charges', 'DeptCharges', 'deptcharges', 'env'),
     ('Check Charges for Missing Tickets', 'CheckMissingTickets', 'checktickets', 'env'),
     ('Generate MS Invoice Details', 'MSInvoiceDetails', 'msinvoice', 'env'),
+    ('Process Meter Reads', 'GetMeters', 'getmeters', 'env'),
     ('Get Papercut Reports', 'get-papercut-reports', 'getreports/get_papercut_reports.py', 'env'),
     ('Generate PaperCut Packages', 'papercut-sw-packager', 'pcswpkgr/papercut_sw_packager.py', 'env'),
     ('Compile MOR', 'CompileMOR', 'compmor/compile_mor.py', 'env'),
