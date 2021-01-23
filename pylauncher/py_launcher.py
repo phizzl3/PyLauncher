@@ -92,7 +92,8 @@ def main():
                           for d, rf, rp, ef in sel]
             title.show()
             # Display menu and call send_commands method on returned object
-            display_menu(*selections).send_commands()
+            shell_return = display_menu(*selections).send_commands()
+            print(shell_return)
 
     except Exception as e:
         input(f'\n Error running main: {e}')
