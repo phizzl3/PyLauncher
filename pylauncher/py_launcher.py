@@ -12,9 +12,9 @@ import platform
 import subprocess
 from pathlib import Path
 
+import menu
 import options
 import title
-from menuloop import display_menu
 
 # Get Path to folder containing the repos and check operating system
 CODE = Path(__file__).resolve().parent.parent.parent
@@ -88,7 +88,7 @@ def main():
         while True:
             title.show()
             # NOTE: Add your menu options to OPS in menuoptions.py
-            sel = display_menu(
+            sel = menu.display(
                 ('PS', options.PSP), ('SSPR', options.SSP), 
                 ('MDS', options.MDS), ('[ Exit ]', 'EXIT'))
             
@@ -100,7 +100,7 @@ def main():
                           for d, rf, rp, ef in sel]
             title.show()
             # Display menu and call send_commands method on returned object
-            display_menu(*selections).send_commands()
+            menu.display(*selections).send_commands()
 
             if SHOWRETURN:
                 input(' ENTER to close...')
