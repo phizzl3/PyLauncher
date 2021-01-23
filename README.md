@@ -20,21 +20,35 @@ The idea is to have a central folder that you clone all of the repositories you 
 ## Sample folder structure
 
 ```txt
--code_folder
-    -pylauncher
-        -pylauncher
-            -PyLauncher.bat
-            -PyLauncher.py
-    -repo1
-        -venv
-        -src
-            -main.py
-    -repo2
-        -main2.py
-    -repo3
-        -env
-        -python
-            -main.py
+code/
+├── PyLauncher
+│   ├── LICENSE
+│   ├── pylauncher
+│   │   ├── __init__.py
+│   │   ├── __main__.py
+│   │   ├── menu.py
+│   │   ├── options.py
+│   │   ├── PyLauncher.bat
+│   │   ├── py_launcher.py
+│   │   └── title.py
+│   └── README.md
+├── Repo-1
+│   ├── README.md
+│   ├── repo1
+│   │   ├── __init__.py
+│   │   └── __main__.py
+│   └── venv
+├── Repo-2
+│   ├── LICENSE
+│   ├── README.md
+│   └── repo_2.py
+└── Repo-3
+    ├── env
+    ├── LICENSE
+    ├── README.md
+    └── src
+        ├── data.py
+        └── repo3.py
 ```
 
 Replace the example info listed below and run py_launcher.py.  
@@ -43,8 +57,9 @@ Replace the example info listed below and run py_launcher.py.
 # Replace each group within the OPS list in menuoptions.py with your repo/script/folder info
 
 OPS = (
-
-    ('Displays in menu', 'RepoFolderName', 'src/myscript.py', 'EnvironmentFolder'),
+    
+    # Using example from above
+    ('Repo 3', 'Repo-3', 'src/repo3.py', 'env'),
 
 )
 ```

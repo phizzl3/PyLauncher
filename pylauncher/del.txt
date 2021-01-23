@@ -1,0 +1,26 @@
+code/
+├── LICENSE
+├── pylauncher
+│   ├── menuloop.py
+│   ├── __pycache__
+│   │   └── menuloop.cpython-38.pyc
+│   ├── Py Launcher.bat
+│   └── py_launcher.py
+└── README.md
+
+
+code_folder/
+|        -pylauncher
+|            -pylauncher
+|                -PyLauncher.bat
+                -PyLauncher.py
+    -repo1
+        -venv
+        -src
+            -main.py
+    -repo2
+        -main2.py
+    -repo3
+        -env
+        -python
+            -main.py
