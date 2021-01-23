@@ -18,8 +18,9 @@ PSP = (
     ('VBS Calculator', 'PrintShopScripts', 'scripts/vbs_calculator.py', None),
     ('Mail Logs Calculator', 'PrintShopScripts', 'scripts/mail_logs_calculator.py', None),
 
+    ('[ Back ]', 'BACK', '', None),
     # Leave this one last for an exit option
-    ('Exit', 'EXIT', '', None)
+    ('[ Exit ]', 'EXIT', '', None)
 
 )
 

@@ -13,13 +13,15 @@ import subprocess
 from pathlib import Path
 
 import options
-from menuloop import display_menu
 import title
+from menuloop import display_menu
 
 # Get Path to folder containing the repos and check operating system
 CODE = Path(__file__).resolve().parent.parent.parent
 OS = platform.system()
 
+# Set to True if having issues with commands to show shell message
+SHOWRETURN = False
 
 class CMD:
 
@@ -54,8 +56,10 @@ class CMD:
         """
         try:
             title.show()  # NOTE: Comment out if you don't want title shown once selected script runs
-            # Set up an exit option to break out of the loop
-            if str(self.repofolder).endswith('EXIT'):
+            # TODO: Set up an exit option to break out of the loop
+            if str(self.repofolder).endswith('BACK'):
+                return
+            elif str(self.repofolder).endswith('EXIT'):
                 exit(' Exiting...')
 
             # Run correctly formatted command based on detected OS and virtual environment
@@ -85,15 +89,21 @@ def main():
             title.show()
             # NOTE: Add your menu options to OPS in menuoptions.py
             sel = display_menu(
-                ('PS', options.PSP), ('SSPR', options.SSP), ('MDS', options.MDS)
-            )
+                ('PS', options.PSP), ('SSPR', options.SSP), 
+                ('MDS', options.MDS), ('[ Exit ]', 'EXIT'))
+            
+            if sel == 'EXIT':
+                exit( 'Exiting...')
+
             # Generate objects and menu items
             selections = [(d, CMD(rf, rp, envfolder=ef))
                           for d, rf, rp, ef in sel]
             title.show()
             # Display menu and call send_commands method on returned object
-            shell_return = display_menu(*selections).send_commands()
-            print(shell_return)
+            display_menu(*selections).send_commands()
+
+            if SHOWRETURN:
+                input(' ENTER to close...')
 
     except Exception as e:
         input(f'\n Error running main: {e}')
