@@ -12,9 +12,9 @@ import platform
 import subprocess
 from pathlib import Path
 
+import options
 from menuloop import display_menu
-from menuoptions import OPS
-from title import display_title
+import title
 
 # Get Path to folder containing the repos and check operating system
 CODE = Path(__file__).resolve().parent.parent.parent
@@ -53,7 +53,7 @@ class CMD:
         specified virtualenv if present. (Windows, Mac, Linux)
         """
         try:
-            display_title()  # NOTE: Comment out if you don't want title shown once selected script runs
+            title.show()  # NOTE: Comment out if you don't want title shown once selected script runs
             # Set up an exit option to break out of the loop
             if str(self.repofolder).endswith('EXIT'):
                 exit(' Exiting...')
@@ -82,12 +82,17 @@ def main():
     """
     try:
         while True:
-            display_title()
+            title.show()
             # NOTE: Add your menu options to OPS in menuoptions.py
+            sel = display_menu(
+                ('PS', options.PSP), ('SSPR', options.SSP), ('MDS', options.MDS)
+            )
             # Generate objects and menu items
-            options = [(d, CMD(rf, rp, envfolder=ef)) for d, rf, rp, ef in OPS]
+            selections = [(d, CMD(rf, rp, envfolder=ef))
+                          for d, rf, rp, ef in sel]
+            title.show()
             # Display menu and call send_commands method on returned object
-            display_menu(*options).send_commands()
+            display_menu(*selections).send_commands()
 
     except Exception as e:
         input(f'\n Error running main: {e}')
