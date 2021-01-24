@@ -19,7 +19,6 @@ PSP = (
     ('Mail Logs Calculator', 'PrintShopScripts', 'scripts/mail_logs_calculator.py', None),
 
     ('[ Back ]', 'BACK', '', None),
-    # Leave this one last for an exit option
     ('[ Exit ]', 'EXIT', '', None)
 
 )
@@ -32,8 +31,8 @@ SSP = (
     ('Process Meter Reads', 'GetMeters', 'getmeters', 'env'),
     ('Compile MOR', 'CompileMOR', 'compmor/compile_mor.py', 'env'),
 
-    # Leave this one last for an exit option
-    ('Exit', 'EXIT', '', None)
+    ('[ Back ]', 'BACK', '', None),
+    ('[ Exit ]', 'EXIT', '', None)
 
 )
 
@@ -42,7 +41,7 @@ MDS = (
     ('Get Papercut Reports', 'get-papercut-reports', 'getreports/get_papercut_reports.py', 'env'),
     ('Generate PaperCut Packages', 'papercut-sw-packager', 'pcswpkgr/papercut_sw_packager.py', 'env'),
 
-    # Leave this one last for an exit option
-    ('Exit', 'EXIT', '', None)
+    ('[ Back ]', 'BACK', '', None),
+    ('[ Exit ]', 'EXIT', '', None)
 
 )
