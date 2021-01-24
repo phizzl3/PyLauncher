@@ -12,7 +12,7 @@ import subprocess
 OS = platform.system()
 
 
-def display_title():
+def show():
     """
     Clears screen and displays ASCII art to console based on OS.
     """
@@ -36,4 +36,4 @@ def display_title():
 
 if __name__ == "__main__":
     # Test
-    display_title()
+    show()
