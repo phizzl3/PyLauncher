@@ -89,8 +89,8 @@ def main():
             title.show()
             # NOTE: Add your menu options to OPS in menuoptions.py
             sel = menu.display(
-                ('PS', options.PSP), ('SSPR', options.SSP), 
-                ('MDS', options.MDS), ('[ Exit ]', 'EXIT'))
+                ('Print Shop Programs', options.PSP), ('Spreadsheet Processing', options.SSP), 
+                ('MDS/Print Management Programs', options.MDS), ('[ Exit ]', 'EXIT'))
             
             if sel == 'EXIT':
                 exit( 'Exiting...')
