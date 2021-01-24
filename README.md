@@ -54,7 +54,7 @@ code/
 Replace the example info listed below and run py_launcher.py.  
 
 ```py
-# Replace each group within the OPS list in menuoptions.py with your repo/script/folder info
+# Replace each group within the OPS list in options.py with your repo/script/folder info
 
 OPS = (
     
