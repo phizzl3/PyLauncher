@@ -8,7 +8,7 @@ NOTE: Use None value if your repo doesn't use a virtual environment folder.
 """
 
 
-OPS = (
+PSP = (
 
     ('Counter Calculator', 'PrintShopScripts', 'scripts/counter_calculator.py', None),
     ('Booklet Estimate', 'PrintShopScripts', 'scripts/booklet_estimate.py', None),
@@ -17,15 +17,31 @@ OPS = (
     ('Ticket Numbering Assist', 'PrintShopScripts', 'scripts/ticket_numbering.py', None),
     ('VBS Calculator', 'PrintShopScripts', 'scripts/vbs_calculator.py', None),
     ('Mail Logs Calculator', 'PrintShopScripts', 'scripts/mail_logs_calculator.py', None),
+
+    ('[ Back ]', 'BACK', '', None),
+    ('[ Exit ]', 'EXIT', '', None)
+
+)
+
+SSP = (
+
     ('Generate Department Charges', 'DeptCharges', 'deptcharges', 'env'),
     ('Check Charges for Missing Tickets', 'CheckMissingTickets', 'checktickets', 'env'),
     ('Generate MS Invoice Details', 'MSInvoiceDetails', 'msinvoice', 'env'),
     ('Process Meter Reads', 'GetMeters', 'getmeters', 'env'),
-    ('Get Papercut Reports', 'get-papercut-reports', 'getreports/get_papercut_reports.py', 'env'),
-    ('Generate PaperCut Packages', 'papercut-sw-packager', 'pcswpkgr/papercut_sw_packager.py', 'env'),
     ('Compile MOR', 'CompileMOR', 'compmor/compile_mor.py', 'env'),
 
-    # Leave this one last for an exit option
-    ('Exit', 'EXIT', '', None)
+    ('[ Back ]', 'BACK', '', None),
+    ('[ Exit ]', 'EXIT', '', None)
+
+)
+
+MDS = (
+
+    ('Get Papercut Reports', 'get-papercut-reports', 'getreports/get_papercut_reports.py', 'env'),
+    ('Generate PaperCut Packages', 'papercut-sw-packager', 'pcswpkgr/papercut_sw_packager.py', 'env'),
+
+    ('[ Back ]', 'BACK', '', None),
+    ('[ Exit ]', 'EXIT', '', None)
 
 )
