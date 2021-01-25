@@ -1,4 +1,4 @@
-# 01.22.2021
+# 01.22.2021 - MODIFIED
 """
 Displays a numbered menu to console and returns a corresponding function 
 or object based on user number selection using a passed *expanded list/tuple.
@@ -7,6 +7,12 @@ Import it and pass it an *expanded list of tuples/lists. It will return list[1]
 for your selection by default. Pass the optional listreturn= argument an integer 
 to return a different list item. 
 """
+
+import colorama
+
+# Set up colorama output
+colorama.init(autoreset=True)
+GREEN = colorama.Fore.LIGHTGREEN_EX
 
 
 def display(*args, listreturn=1):
@@ -28,7 +34,7 @@ def display(*args, listreturn=1):
     """
     # Number (enumerate) and display the options [0] from args pair starting at 1
     for i, arg in enumerate(args, 1):
-        print(f' [{i}]: {arg[0]}')
+        print(f'{GREEN} [{i}]: {arg[0]}')
 
     # Ask for user input and return the corresponding item/function (defaults to index[1])
     # only if the selection can be found in list.
