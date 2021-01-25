@@ -29,7 +29,7 @@ SSP = (
     ('Check Charges for Missing Tickets', 'CheckMissingTickets', 'checktickets', 'env'),
     ('Generate MS Invoice Details', 'MSInvoiceDetails', 'msinvoice', 'env'),
     ('Process Meter Reads', 'GetMeters', 'getmeters', 'env'),
-    ('Compile MOR', 'CompileMOR', 'compmor/compile_mor.py', 'env'),
+    ('Compile MOR', 'CompileMOR', 'compmor', 'env'),
 
     ('[ Back ]', 'BACK', '', None),
     ('[ Exit ]', 'EXIT', '', None)
