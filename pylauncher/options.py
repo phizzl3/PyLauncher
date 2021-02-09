@@ -17,6 +17,7 @@ PSP = (
     ('Ticket Numbering Assist', 'PrintShopScripts', 'scripts/ticket_numbering.py', None),
     ('VBS Calculator', 'PrintShopScripts', 'scripts/vbs_calculator.py', None),
     ('Mail Logs Calculator', 'PrintShopScripts', 'scripts/mail_logs_calculator.py', None),
+    ('Count Files in Directory', 'CountFiles', 'countfiles', None),
 
     ('[ Back ]', 'BACK', '', None),
     ('[ Exit ]', 'EXIT', '', None)
