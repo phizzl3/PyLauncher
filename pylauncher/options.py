@@ -29,6 +29,7 @@ SSP = (
     ('Generate Department Charges', 'DeptCharges', 'deptcharges', 'env'),
     ('Check Charges for Missing Tickets', 'CheckMissingTickets', 'checktickets', 'env'),
     ('Generate MS Invoice Details', 'MSInvoiceDetails', 'msinvoice', 'env'),
+    ('Generate TS Invoice Details', 'TSInvoiceDetails', 'tsinvoice', 'env'),
     ('Process Meter Reads', 'GetMeters', 'getmeters', 'env'),
     ('Compile MOR', 'CompileMOR', 'compmor', 'env'),
 
