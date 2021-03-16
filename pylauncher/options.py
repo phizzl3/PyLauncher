@@ -40,8 +40,8 @@ SSP = (
 
 MDS = (
 
-    ('Get Papercut Reports', 'get-papercut-reports', 'getreports/get_papercut_reports.py', 'env'),
-    ('Generate PaperCut Packages', 'papercut-sw-packager', 'pcswpkgr/papercut_sw_packager.py', 'env'),
+    ('Get Papercut Reports', 'GetPapercutReports', 'getreports/get_papercut_reports.py', 'env'),
+    ('Generate PaperCut Packages', 'PapercutSWPackager', 'pcswpkgr/papercut_sw_packager.py', 'env'),
 
     ('[ Back ]', 'BACK', '', None),
     ('[ Exit ]', 'EXIT', '', None)
