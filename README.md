@@ -48,9 +48,6 @@ code/
 │   │   ├── __init__.py
 │   │   ├── __main__.py
 │   │   ├── menu.py
-│   │   ├── options.py
-│   │   ├── PyLauncher.bat
-│   │   ├── py_launcher.py
 │   │   └── title.py
 │   └── README.md
 ├── Repo-1
