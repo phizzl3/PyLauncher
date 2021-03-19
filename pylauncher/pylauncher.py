@@ -8,11 +8,11 @@ modify/import/combine them to do so.
 * View README.md for more info.
 """
 
+import json
 import os
 import platform
 import subprocess
 from pathlib import Path
-import json
 
 import menu
 import title
@@ -26,7 +26,7 @@ CODE = Path(__file__).resolve().parent.parent.parent
 # CODE = Path(__file__).resolve().parent  # for pyinstaller use
 OS = platform.system()
 
-# Set to True if having issues with commands to show shell message
+# NOTE: Set to True if having issues with commands to show shell message
 SHOWRETURN = False
 
 
