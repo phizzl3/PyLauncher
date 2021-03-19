@@ -8,8 +8,14 @@ import os
 import platform
 import subprocess
 
+import colorama
+
 # Get operating system
 OS = platform.system()
+
+# Set up colorama output
+colorama.init(autoreset=True)
+BLUE = colorama.Fore.LIGHTBLUE_EX
 
 
 def show():
@@ -23,7 +29,7 @@ def show():
  ██╔═══╝   ╚██╔╝  ██║     ██╔══██║██║   ██║██║╚██╗██║██║     ██╔══██║██╔══╝  ██╔══██╗
  ██║        ██║   ███████╗██║  ██║╚██████╔╝██║ ╚████║╚██████╗██║  ██║███████╗██║  ██║
  ╚═╝        ╚═╝   ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
-                                                                       
+                                                                       Code: Brandon
     """
 
     if OS == 'Windows':
@@ -31,7 +37,7 @@ def show():
     elif OS == 'Darwin' or OS == 'Linux':
         subprocess.run('clear', shell=True)
 
-    print(title)
+    print(f'{BLUE}{title}')
 
 
 if __name__ == "__main__":
