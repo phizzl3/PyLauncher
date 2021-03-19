@@ -15,7 +15,6 @@ from pathlib import Path
 import json
 
 import menu
-# import options
 import title
 
 # Get Path to folder containing the repos and check operating system
