@@ -16,7 +16,7 @@ colorama.init(autoreset=True)
 GREEN = colorama.Fore.LIGHTGREEN_EX
 
 
-def display(*args, listreturn=1):
+def display(*args: list, listreturn: int=1):
     """
     Displays menu items [0] from list/tuple pairs/group to console, 
     gets user selection and returns corresponding function/item 
