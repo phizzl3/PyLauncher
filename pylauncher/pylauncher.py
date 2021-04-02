@@ -32,7 +32,8 @@ SHOWRETURN = False
 
 class CMD:
 
-    def __init__(self, repofolder, runptpath, envfolder=None) -> None:
+    def __init__(self, repofolder: str,
+                 runptpath: str, envfolder: str = None) -> None:
         """
         Initialize and set up attributes to be used to generate shell 
         commands.
@@ -75,12 +76,18 @@ class CMD:
             # Run formatted command based on detected OS and virtual
             # environment.
             if OS == 'Windows':
-                os.system(
-                    f'{self.envfolder/"Scripts"/"python.exe" if hasattr(self, "envfolder") else "py"} {self.runpath}')
+                if hasattr(self, "envfolder"):
+                    pyloc = f'{self.envfolder/"Scripts"/"python.exe"}'
+                else:
+                    pyloc = "py"
+                os.system(f'{pyloc} {self.runpath}')
 
             elif OS == 'Darwin' or 'Linux':
-                subprocess.run(
-                    f'{self.envfolder/"bin"/"python3" if hasattr(self, "envfolder") else "python3"} {self.runpath}', shell=True)
+                if hasattr(self, "envfolder"):
+                    pyloc = f'{self.envfolder/"bin"/"python3"}'
+                else:
+                    pyloc = "python3"
+                subprocess.run(f'{pyloc} {self.runpath}', shell=True)
 
             else:
                 exit('Platform not supported.')
